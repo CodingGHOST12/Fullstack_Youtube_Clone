@@ -179,9 +179,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
-// ======================
 // CURRENT USER
-// ======================
 
 router.get("/me", protect, async (req, res) => {
   try {
