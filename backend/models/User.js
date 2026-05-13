@@ -109,9 +109,8 @@ const userSchema = new mongoose.Schema(
 );
 
 
-// ======================
+
 // HASH PASSWORD
-// ======================
 
 userSchema.pre(
   'save',
