@@ -24,9 +24,8 @@ const generateToken = (id) => {
   );
 };
 
-// ======================
+
 // REGISTER USER
-// ======================
 
 router.post("/register", async (req, res) => {
   try {
