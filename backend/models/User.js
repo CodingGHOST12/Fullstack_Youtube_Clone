@@ -146,9 +146,7 @@ userSchema.pre(
 );
 
 
-// ======================
 // MATCH PASSWORD
-// ======================
 
 userSchema.methods.matchPassword =
   async function (
