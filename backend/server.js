@@ -86,9 +86,8 @@ app.use((err, req, res, next) => {
   });
 });
 
-// ======================
+
 // DATABASE CONNECTION
-// ======================
 
 const PORT = process.env.PORT || 5000;
 
