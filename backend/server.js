@@ -62,9 +62,8 @@ app.get("/api/health", (req, res) => {
   });
 });
 
-// ======================
+
 // 404 HANDLER
-// ======================
 
 app.use((req, res) => {
   res.status(404).json({
