@@ -8,9 +8,8 @@ import protect from "../middleware/auth.js";
 
 const router = express.Router();
 
-// ======================
+
 // GENERATE JWT
-// ======================
 
 const generateToken = (id) => {
   return jwt.sign(
