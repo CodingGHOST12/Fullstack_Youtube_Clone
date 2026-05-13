@@ -49,10 +49,9 @@ const protect = async (req, res, next) => {
       });
     }
 
-    // ======================
-    // ATTACH USER
-    // ======================
 
+    // ATTACH USER
+  
     req.user = user;
 
     next();
