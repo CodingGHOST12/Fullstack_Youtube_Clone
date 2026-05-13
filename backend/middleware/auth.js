@@ -27,9 +27,8 @@ const protect = async (req, res, next) => {
       });
     }
 
-    // ======================
+  
     // VERIFY TOKEN
-    // ======================
 
     const decoded = jwt.verify(
       token,
