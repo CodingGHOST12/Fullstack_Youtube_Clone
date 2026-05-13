@@ -1,0 +1,188 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  background: rgba(15, 15, 15, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  gap: 16px;
+  z-index: 100;
+}
+
+/* Left */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition);
+}
+.hamburger:hover { background: var(--bg-hover); }
+.hamburger span {
+  display: block;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+}
+.logo-icon {
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+.logo-text { color: var(--text-primary); }
+
+/* Search */
+.search-form {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.search-form:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+.search-input {
+  flex: 1;
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+.search-input::placeholder { color: var(--text-muted); }
+.search-btn {
+  padding: 8px 16px;
+  color: var(--text-secondary);
+  border-left: 1px solid var(--border);
+  transition: background var(--transition), color var(--transition);
+  display: flex;
+  align-items: center;
+}
+.search-btn:hover { background: var(--bg-hover); color: var(--text-primary); }
+
+/* Right */
+.header-right {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.signin-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  border: 1.5px solid var(--accent);
+  border-radius: var(--radius-full);
+  color: var(--accent);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background var(--transition), color var(--transition);
+}
+.signin-btn:hover { background: var(--accent); color: #fff; }
+
+/* User menu */
+.user-menu { position: relative; }
+
+.avatar-btn {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--border);
+  transition: border-color var(--transition);
+}
+.avatar-btn:hover { border-color: var(--accent); }
+.avatar-img { width: 100%; height: 100%; object-fit: cover; }
+.avatar-initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  min-width: 200px;
+  box-shadow: var(--shadow-modal);
+  overflow: hidden;
+  animation: fadeDown 0.15s ease;
+  z-index: 200;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-user {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.dropdown-name { font-weight: 600; font-size: 0.9rem; }
+.dropdown-email { color: var(--text-muted); font-size: 0.78rem; }
+
+.dropdown-divider { height: 1px; background: var(--border); }
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 16px;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  transition: background var(--transition), color var(--transition);
+}
+.dropdown-item:hover { background: var(--bg-hover); color: var(--text-primary); }
+.logout-item:hover { color: var(--accent); }
+
+/* Responsive */
+@media (max-width: 600px) {
+  .logo-text { display: none; }
+  .search-form { max-width: none; }
+}
