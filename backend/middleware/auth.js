@@ -6,10 +6,9 @@ const protect = async (req, res, next) => {
   try {
     let token;
 
-    // ======================
+ 
     // CHECK AUTH HEADER
-    // ======================
-
+  
     if (
       req.headers.authorization &&
       req.headers.authorization.startsWith("Bearer")
