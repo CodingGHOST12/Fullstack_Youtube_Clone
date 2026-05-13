@@ -50,9 +50,8 @@ app.use("/api/channels", channelRoutes);
 
 app.use("/api/comments", commentRoutes);
 
-// ======================
+
 // HEALTH CHECK
-// ======================
 
 app.get("/api/health", (req, res) => {
   res.status(200).json({
